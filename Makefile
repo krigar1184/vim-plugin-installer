@@ -1,2 +1,3 @@
-install:
-	cp .vimrc $(HOME)
+install: install.sh
+	./install.sh
+		

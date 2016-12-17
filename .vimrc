@@ -1,8 +1,10 @@
 function SetEditorWindow()
     if v:vim_did_enter
         execute "50vs"
+        execute "e."
     else
         au VimEnter * execute "50vs"
+        au VimEnter * execute "e." 
     endif
 endfunction
 
