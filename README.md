@@ -1,1 +1,3 @@
-# dotfiles
+# vimmer
+
+Simple vim configuration manager

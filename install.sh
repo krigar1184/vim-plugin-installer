@@ -1,32 +1,23 @@
 #!/bin/bash
+bundle_dir="$HOME/.vim/bundle"
+plugins=( 
+    "vim-syntastic/syntastic"
+    "vim-airline/vim-airline"
+    "airblade/vim-gitgutter"
+    "majutsushi/tagbar"
+)
+
 if [ ! -f "$HOME/.vimrc" ]; then
     cp .vimrc $HOME/.vimrc
 fi
 
-# install pathogen
-if [ ! -d "$HOME/.vim/autoload" ]; then
-    mkdir -p "$HOME/.vim/autoload" 
-    curl -LSso "$HOME/.vim/autoload/pathogen.vim" "https://tpo.pe/pathogen.vim"
-fi
+for plugin in "${plugins[@]}" 
+do
+    data=($(echo $plugin | tr '/' ' '))
+    name=${data[1]}
 
-if [ ! -d "$HOME/.vim/bundle" ]; then
-    mkdir -p "$HOME/.vim/bundle"
-fi
-
-# install syntastic
-if [ ! -d "$HOME/.vim/bundle/syntastic" ]; then
-    echo "Installing syntastic..."
-    git clone --depth=1 "https://github.com/vim-syntastic/syntastic.git" "$HOME/.vim/bundle/syntastic"
-fi
-
-# install airline
-if [ ! -d "$HOME/.vim/bundle/vim-airline" ]; then
-    echo "Installing airline..."
-    git clone "https://github.com/vim-airline/vim-airline" "$HOME/.vim/bundle/vim-airline"
-fi
-
-#install gitgutter
-if [ ! -d "$HOME/.vim/bundle/vim-gitgutter" ]; then
-    echo "Installing gitgutter..."
-    git clone "https://github.com/airblade/vim-gitgutter" "$HOME/.vim/bundle/gitgutter"
-fi
+    if [ ! -d "$bundle_dir/$name" ]; then
+        echo "Installing $name..."
+        git clone "https://github.com/$plugin" "$bundle_dir/$name"
+    fi
+done
