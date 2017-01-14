@@ -16,17 +16,17 @@ fi
 # install syntastic
 if [ ! -d "$HOME/.vim/bundle/syntastic" ]; then
     echo "Installing syntastic..."
-    git clone --depth=1 "https://github.com/vim-syntastic/syntastic.git" "$HOME/.vim/bundle/"
+    git clone --depth=1 "https://github.com/vim-syntastic/syntastic.git" "$HOME/.vim/bundle/syntastic"
 fi
 
 # install airline
 if [ ! -d "$HOME/.vim/bundle/vim-airline" ]; then
     echo "Installing airline..."
-    git clone "https://github.com/vim-airline/vim-airline" "$HOME/.vim/bundle/"
+    git clone "https://github.com/vim-airline/vim-airline" "$HOME/.vim/bundle/vim-airline"
 fi
 
 #install gitgutter
 if [ ! -d "$HOME/.vim/bundle/vim-gitgutter" ]; then
     echo "Installing gitgutter..."
-    git clone "https://github.com/airblade/vim-gitgutter" "$HOME/.vim/bundle/"
+    git clone "https://github.com/airblade/vim-gitgutter" "$HOME/.vim/bundle/gitgutter"
 fi

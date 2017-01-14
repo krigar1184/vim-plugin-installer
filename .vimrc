@@ -1,14 +1,3 @@
-function SetEditorWindow()
-    if v:vim_did_enter
-        execute "50vs"
-        execute "e."
-    else
-        au VimEnter * execute "50vs"
-        au VimEnter * execute "e." 
-    endif
-endfunction
-
-
 set number
 set expandtab
 set tabstop=4
@@ -22,8 +11,6 @@ let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:netrw_line=1
 let g:netrw_chgwin=2
-
-call SetEditorWindow()
 
 " syntastic config
 set statusline+=%#warningmsg#
