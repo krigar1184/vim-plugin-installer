@@ -2,9 +2,9 @@ set number
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set smartindent
 
 " netrw config
-
 set nocp
 filetype plugin on
 let g:netrw_banner=0
@@ -24,5 +24,8 @@ let g:syntastic_check_on_wq = 0
 
 " tagbar config
 nmap <F8> :TagbarToggle<CR>
+
+" vim-jsx config
+let g:jsx_ext_required = 0
 
 execute pathogen#infect()

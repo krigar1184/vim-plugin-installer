@@ -5,6 +5,8 @@ plugins=(
     "vim-airline/vim-airline"
     "airblade/vim-gitgutter"
     "majutsushi/tagbar"
+    "mxw/vim-jsx"
+    "pangloss/vim-javascript"
 )
 
 if [ ! -f "$HOME/.vimrc" ]; then
