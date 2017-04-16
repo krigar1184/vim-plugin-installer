@@ -7,6 +7,8 @@ plugins=(
     "majutsushi/tagbar"
     "mxw/vim-jsx"
     "pangloss/vim-javascript"
+    "altercation/vim-colors-solarized"
+    "godlygeek/tabular"
 )
 
 if [ ! -f "$HOME/.vimrc" ]; then
