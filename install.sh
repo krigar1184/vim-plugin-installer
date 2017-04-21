@@ -7,6 +7,8 @@ plugins=(
     "majutsushi/tagbar"
     "mxw/vim-jsx"
     "pangloss/vim-javascript"
+    "scrooloose/nerdtree"
+    "Xuyuanp/nerdtree-git-plugin"
 )
 
 if [ ! -f "$HOME/.vimrc" ]; then
