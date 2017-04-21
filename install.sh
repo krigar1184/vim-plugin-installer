@@ -9,6 +9,8 @@ plugins=(
     "pangloss/vim-javascript"
     "scrooloose/nerdtree"
     "Xuyuanp/nerdtree-git-plugin"
+    "altercation/vim-colors-solarized"
+    "godlygeek/tabular"
 )
 
 if [ ! -f "$HOME/.vimrc" ]; then

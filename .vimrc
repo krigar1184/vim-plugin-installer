@@ -1,8 +1,12 @@
+syntax enable
+
 set number
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set smartindent
+set background=dark
+colorscheme solarized
 
 " netrw config
 set nocp
