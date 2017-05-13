@@ -13,8 +13,14 @@ plugins=(
     "godlygeek/tabular"
 )
 
-if [ ! -f "$HOME/.vimrc" ]; then
-    cp .vimrc $HOME/.vimrc
+if [ -f "$HOME/.vimrc" ]; then
+    read -p "Replace the existing .vimrc? (n|Y)" -n 1
+    case $REPLY in
+        Y) cp vimrc $HOME/.vimrc;;
+        n) ;;
+    esac
+else
+    cp vimrc $HOME/.vimrc
 fi
 
 for plugin in "${plugins[@]}" 

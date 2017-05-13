@@ -6,7 +6,7 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " netrw config
 set nocp
