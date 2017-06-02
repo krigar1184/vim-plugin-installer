@@ -14,7 +14,7 @@ plugins=(
 )
 
 if [ -f "$HOME/.vimrc" ]; then
-    read -p "Replace the existing .vimrc? (n|Y)" -n 1
+    read -p "Replace the existing .vimrc? (n|Y)\n" -n 1
     case $REPLY in
         Y) cp vimrc $HOME/.vimrc;;
         n) ;;
