@@ -9,8 +9,14 @@ set encoding=utf-8
 set autoread
 set cursorline
 set showmatch
+set tildeop
 set rtp+=~/.vim,~/.vim/autoload,~/.vim/bundle
 set t_Co=256
+
+" === MAPPINGS ===
+nmap W up
+
+"=== PLUGINS ===
 
 " netrw config
 let g:netrw_banner=0
