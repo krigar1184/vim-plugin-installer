@@ -14,7 +14,10 @@ set rtp+=~/.vim,~/.vim/autoload,~/.vim/bundle
 set t_Co=256
 
 " === MAPPINGS ===
-nmap W up
+nmap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
+autocmd BufEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
+tnoremap <Esc> <C-\><C-n>
 
 "=== PLUGINS ===
 
