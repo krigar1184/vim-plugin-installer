@@ -11,6 +11,8 @@ plugins=(
     "Xuyuanp/nerdtree-git-plugin"
     "altercation/vim-colors-solarized"
     "godlygeek/tabular"
+    "tpope/vim-surround"
+    "tpope/vim-repeat"
 )
 
 if [ -f "$HOME/.vimrc" ]; then
