@@ -13,10 +13,11 @@ set tildeop
 set rtp+=~/.vim,~/.vim/autoload,~/.vim/bundle
 set t_Co=256
 
-" === MAPPINGS ===
-nmap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
+
+" === MAPPINGS ===
+nmap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
 tnoremap <Esc> <C-\><C-n>
 
 "=== PLUGINS ===
@@ -37,8 +38,8 @@ filetype plugin indent on
 
 " solarized
 set background=dark
-" colorscheme solarized
 let g:solarized_termcolors=256
+colorscheme solarized
 
 " syntastic config
 set statusline+=%#warningmsg#
@@ -54,7 +55,7 @@ let g:syntactic_loc_list_height = 5
 
 " tagbar config
 nmap <F8> :TagbarToggle<CR>
-autocmd VimEnter * nested :call tagbar#autoopen(0)
+autocmd vimenter * nested :call tagbar#autoopen(0)
 let g:tagbar_autofocus=1
 let g:tagbar_sort=0
 let g:tagbar_show_visibility=1
