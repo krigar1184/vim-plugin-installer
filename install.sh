@@ -13,6 +13,7 @@ plugins=(
     "godlygeek/tabular"
     "tpope/vim-surround"
     "tpope/vim-repeat"
+    "MarSoft/nerdtree-grep-plugin"
 )
 
 if [ -f "$HOME/.vimrc" ]; then
