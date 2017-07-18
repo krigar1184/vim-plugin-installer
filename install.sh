@@ -14,6 +14,7 @@ plugins=(
     "tpope/vim-surround"
     "tpope/vim-repeat"
     "MarSoft/nerdtree-grep-plugin"
+    "python-mode/python-mode"
 )
 
 if [ -f "$HOME/.vimrc" ]; then
@@ -34,5 +35,8 @@ do
     if [ ! -d "$bundle_dir/$name" ]; then
         echo "Installing $name..."
         git clone "https://github.com/$plugin" "$bundle_dir/$name"
+    else
+        echo "Upgrading $name..."
+        cd "$bundle_dir/$name" && git pull --rebase origin master 1>/dev/null
     fi
 done
