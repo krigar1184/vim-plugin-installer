@@ -71,3 +71,18 @@ autocmd vimenter * NERDTree
 " gitgutter config
 let g:gitgutter_realtime=0
 let g:gitgutter_eager=0
+
+" python-mode config
+let g:pymode=1
+let g:pymode_warnings=1
+let g:pymode_trim_whitespaces=1
+let g:pymode_python='python3'
+let g:pymode_indent=1
+let g:pymode_folding=0
+let g:pymode_doc=1
+let g:pymode_run=1
+let g:pymode_breakpoint=1
+let g:pymode_breakpointcmd='ipdb'
+let g:pymode_lint=0
+let g:pymode_lint_on_write=1
+let g:pymode_list_checkers=['pyflakes', 'pep8', 'mccabe', 'pep257', 'pylint']
