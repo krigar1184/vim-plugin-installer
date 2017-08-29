@@ -15,6 +15,7 @@ plugins=(
     "tpope/vim-repeat"
     "MarSoft/nerdtree-grep-plugin"
     "python-mode/python-mode"
+    "Rykka/doctest.vim"
 )
 
 if [ -f "$HOME/.vimrc" ]; then
@@ -37,6 +38,6 @@ do
         git clone "https://github.com/$plugin" "$bundle_dir/$name"
     else
         echo "Upgrading $name..."
-        cd "$bundle_dir/$name" && git pull --rebase origin master 1>/dev/null
+        cd "$bundle_dir/$name" && git pull --rebase origin master &1>/dev/null
     fi
 done

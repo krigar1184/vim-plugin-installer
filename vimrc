@@ -18,6 +18,12 @@ autocmd BufLeave term://* stopinsert
 
 " === MAPPINGS ===
 nmap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
+
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Down>
+
 tnoremap <Esc> <C-\><C-n>
 
 "=== PLUGINS ===
@@ -86,3 +92,4 @@ let g:pymode_breakpointcmd='ipdb'
 let g:pymode_lint=0
 let g:pymode_lint_on_write=1
 let g:pymode_list_checkers=['pyflakes', 'pep8', 'mccabe', 'pep257', 'pylint']
+let g:pymode_syntax_doctest = g:pymode_syntax_all
