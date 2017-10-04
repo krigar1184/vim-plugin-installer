@@ -1,30 +1,42 @@
+set autoread
+set cursorline
 set clipboard+=unnamedplus
-set number
 set expandtab
+set encoding=utf-8
+set hlsearch
+set incsearch
+set lazyredraw
+set nowrap
+set number
+set rtp+=~/.vim,~/.vim/autoload,~/.vim/bundle
 set tabstop=4
 set shiftwidth=4
 set smartindent
-set nowrap
-set encoding=utf-8
-set autoread
-set cursorline
-set showmatch
+set softtabstop=4
 set tildeop
-set rtp+=~/.vim,~/.vim/autoload,~/.vim/bundle
 set t_Co=256
+set wildmenu
+
+let mapleader=","
 
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
-
-autocmd FileType xml setlocal equalprg=xmllint\ -- format\ --recover\ -\ 2>/dev/null
+autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 " === MAPPINGS ===
-nmap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
+nnoremap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
+nnoremap gV `[v`]
+nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>t :sp term://bash<CR>
+nnoremap <leader>a :Ack
 
-map <C-k> <C-w><Up>
-map <C-j> <C-w><Down>
-map <C-l> <C-w><Right>
-map <C-h> <C-w><Down>
+noremap <C-k> <C-w><Up>
+noremap <C-j> <C-w><Down>
+noremap <C-l> <C-w><Right>
+noremap <C-h> <C-w><Left>
 
 tnoremap <Esc> <C-\><C-n>
 
@@ -43,6 +55,15 @@ syntax on
 filetype on
 filetype plugin on
 filetype plugin indent on
+filetype indent on
+
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " solarized
 set background=dark
@@ -81,6 +102,7 @@ let g:gitgutter_realtime=0
 let g:gitgutter_eager=0
 
 " python-mode config
+let python_highlight_all=1
 let g:pymode=1
 let g:pymode_warnings=1
 let g:pymode_trim_whitespaces=1
@@ -95,3 +117,8 @@ let g:pymode_lint=0
 let g:pymode_lint_on_write=1
 let g:pymode_list_checkers=['pyflakes', 'pep8', 'mccabe', 'pep257', 'pylint']
 " let g:pymode_syntax_doctest = g:pymode_syntax_all
+
+let g:ctrlp_match_window="bottom,order:ttb"
+let g:ctrlp_switch_buffer=0
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'

@@ -18,6 +18,9 @@ plugins=(
     "Rykka/doctest.vim"
     "jistr/vim-nerdtree-tabs"
     "Lokaltog/powerline"
+    "sjl/gundo.vim"
+    "rking/ag.vim"
+    "ctrlpvim/ctrlp.vim"
 )
 
 if [ -f "$HOME/.vimrc" ]; then
