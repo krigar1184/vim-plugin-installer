@@ -16,6 +16,8 @@ set t_Co=256
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
+autocmd FileType xml setlocal equalprg=xmllint\ -- format\ --recover\ -\ 2>/dev/null
+
 " === MAPPINGS ===
 nmap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
 
@@ -92,4 +94,4 @@ let g:pymode_breakpointcmd='ipdb'
 let g:pymode_lint=0
 let g:pymode_lint_on_write=1
 let g:pymode_list_checkers=['pyflakes', 'pep8', 'mccabe', 'pep257', 'pylint']
-let g:pymode_syntax_doctest = g:pymode_syntax_all
+" let g:pymode_syntax_doctest = g:pymode_syntax_all

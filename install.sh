@@ -16,10 +16,12 @@ plugins=(
     "MarSoft/nerdtree-grep-plugin"
     "python-mode/python-mode"
     "Rykka/doctest.vim"
+    "jistr/vim-nerdtree-tabs"
+    "Lokaltog/powerline"
 )
 
 if [ -f "$HOME/.vimrc" ]; then
-    read -p "Replace the existing .vimrc? (n|Y)\n" -n 1
+    read -p "Replace the existing .vimrc? (n|Y)" -n 1
     case $REPLY in
         Y) cp vimrc $HOME/.vimrc;;
         n) ;;
@@ -41,3 +43,5 @@ do
         cd "$bundle_dir/$name" && git pull --rebase origin master &1>/dev/null
     fi
 done
+
+echo "Complete."
