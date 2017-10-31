@@ -43,7 +43,7 @@ do
         git clone "https://github.com/$plugin" "$bundle_dir/$name"
     else
         echo "Upgrading $name..."
-        cd "$bundle_dir/$name" && git pull --rebase origin master &1>/dev/null
+        cd "$bundle_dir/$name" && git pull --rebase origin master 1>/dev/null 2>&1 
     fi
 done
 

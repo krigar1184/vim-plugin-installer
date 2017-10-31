@@ -26,17 +26,23 @@ autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/n
 " === MAPPINGS ===
 nnoremap ,ipdb oimport ipdb;ipdb.set_trace(context=10)<Esc>
 nnoremap gV `[v`]
+nnoremap <leader>tn :NERDTreeToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>t :sp term://bash<CR>
+nnoremap <leader>sz :source ~/.zshrc<CR>
+nnoremap <leader>tt :sp term://bash<CR>
 nnoremap <leader>a :Ack
 
 noremap <C-k> <C-w><Up>
 noremap <C-j> <C-w><Down>
 noremap <C-l> <C-w><Right>
 noremap <C-h> <C-w><Left>
+
+nmap <silent><leader>f :Pytest file<CR>
+nmap <silent><leader>c :Pytest class<CR>
+nmap <silent><leader>m :Pytest method<CR>
 
 tnoremap <Esc> <C-\><C-n>
 
